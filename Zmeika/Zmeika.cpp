@@ -38,7 +38,7 @@ void draw()
             //if (i == 1 || i == width || j == 1 || j == height)
             if (i == width || j == height)
             {
-                cout << "#";
+                cout << "П";
             }
             else if (i == y && j == x)
             {
