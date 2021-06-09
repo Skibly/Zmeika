@@ -29,7 +29,7 @@ void setup()
 
 void draw()
 {
-    //i-koorfinata po y, j-koordinata po x.
+    //i - координата по y, j - координата по х.
     system("cls");
     for (int j = 1; j <= height; j++)
     {
@@ -50,7 +50,7 @@ void draw()
             }
             else
             {
-                //risuyem xvostik zmeyi
+                //Рисуем хвостик змейки
                 bool print = false;
                 for (int k = 0; k < nTail; k++)
                 {
@@ -103,7 +103,7 @@ void input()
 
 void logic()
 {
-    // "x" u menya sverxu vniz,a "y"- sleva napravo.
+    // x - вверх вниз, y - лево право
     int prevY = tailY[0];
     int prevX = tailX[0];
     int prev2Y, prev2X;
@@ -134,7 +134,7 @@ void logic()
         break;
     }
 
-    //esli zmeyka vishla za stenku igra zakanchivayetsa
+    //если змейка вышла в стенку - она умрет
     /*if (x > width || x < 0 || y>height || y<0)
     {
     gameOver = true;
@@ -149,7 +149,7 @@ void logic()
     else if (y < 0)
         y = height - 0;
 
-    //Game Over kogda zmeyka syedayet sebya
+    //Гейм овер когда змейка сьедает себя
     for (int i = 0; i < nTail; i++)
     {
         if (tailX[i] == x && tailY[i] == y)
@@ -159,13 +159,13 @@ void logic()
         }
     }
 
-    //napolneniye ochkov
+    //Накопление очков
     if (x == fruit_x && y == fruit_y)
     {
         score += 50;
 
         fruit_x = rand() % (width - 2) + 2;
-        fruit_y = rand() % (height - 2) + 2;//proverit koordinati zmeji i tolko potom otrisovat frukt
+        fruit_y = rand() % (height - 2) + 2;//проверяет координаты змеи и только потом отрисовывает фрукт
         nTail++;
     }
 }
