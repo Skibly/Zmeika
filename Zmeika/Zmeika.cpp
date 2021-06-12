@@ -169,7 +169,7 @@ void logic()
         fruit_x = rand() % (width - 2) + 2;
         fruit_y = rand() % (height - 2) + 2; //проверяет координаты змеи и только потом отрисовывает фрукт
         nTail++;
-        cout << "+50" << endl;
+        cout << " +50 " << endl;
     }
 }
 
