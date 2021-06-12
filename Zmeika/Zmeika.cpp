@@ -10,6 +10,7 @@ const int height = 20;
 int x, y, fruit_x, fruit_y, score;
 int tailX[100], tailY[100];
 int nTail;
+int eaten;
 enum edirect { stop = 0, LEFT, RIGHT, up, down };
 edirect dir;
 
@@ -69,6 +70,7 @@ void draw()
         cout << endl;
     }
     cout << "Счет : " << score << endl;
+    cout << "Сьедено фруктов : " << eaten << endl;
     cout << "\nИспользуйте WASD для перемещения. Q - Выйти из игры." << endl;
     cout << "Если змейка не двигается переключите раскладку клавиатуры на английскую." << endl;
 }
@@ -162,9 +164,10 @@ void logic()
     if (x == fruit_x && y == fruit_y)
     {
         score += 50;
+        eaten += 1;
 
         fruit_x = rand() % (width - 2) + 2;
-        fruit_y = rand() % (height - 2) + 2;//проверяет координаты змеи и только потом отрисовывает фрукт
+        fruit_y = rand() % (height - 2) + 2; //проверяет координаты змеи и только потом отрисовывает фрукт
         nTail++;
         cout << "+50" << endl;
     }
