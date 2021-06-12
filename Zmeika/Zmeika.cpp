@@ -5,8 +5,8 @@
 using namespace std;
 
 bool gameOver;
-const int width = 15;
-const int height = 15;
+const int width = 20;
+const int height = 20;
 int x, y, fruit_x, fruit_y, score;
 int tailX[100], tailY[100];
 int nTail;
@@ -57,7 +57,7 @@ void draw()
                     if (tailY[k] == i && tailX[k] == j)
                     {
                         print = true;
-                        cout << "o";
+                        cout << "8";
                     }
                 }
                 if (!print)
@@ -68,11 +68,7 @@ void draw()
         }
         cout << endl;
     }
-    cout << "Навигация:" << endl;
-    cout << "W - ВВЕРХ." << endl;
-    cout << "A - ВЛЕВО." << endl;
-    cout << "S - ВНИЗ." << endl;
-    cout << "D - ВПРАВО." << endl;
+    cout << "Используйте WASD для перемещения." << endl;
     cout << "Счет : " << score << endl;
 }
 
@@ -135,19 +131,20 @@ void logic()
     }
 
     //если змейка вышла в стенку - она умрет
-    /*if (x > width || x < 0 || y>height || y<0)
+    if (x > width || x < 0 || y>height || y<0)
     {
-    gameOver = true;
-    }*/
+        gameOver = true;
+    }
 
-    if (x >= width - 0)
+    // Перемещение через стенки.
+    /*if (x >= width - 0)
         x = 0;
     else if (x < 0)
         x = width - 1;
     if (y >= height)
         y = 0;
     else if (y < 0)
-        y = height - 0;
+        y = height - 0;*/
 
     //Гейм овер когда змейка сьедает себя
     for (int i = 0; i < nTail; i++)
@@ -167,12 +164,14 @@ void logic()
         fruit_x = rand() % (width - 2) + 2;
         fruit_y = rand() % (height - 2) + 2;//проверяет координаты змеи и только потом отрисовывает фрукт
         nTail++;
+        cout << "+50" << endl;
     }
 }
 
 int main()
 {
     setlocale(LC_ALL, "Russian");
+    system("color A0");
     setup();
     while (!gameOver)
     {
