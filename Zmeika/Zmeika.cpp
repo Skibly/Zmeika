@@ -46,7 +46,7 @@ void draw()
             }
             else if (i == fruit_y && j == fruit_x)
             {
-                cout << "*";
+                cout << "+";
             }
             else
             {
@@ -132,9 +132,10 @@ void logic()
     }
 
     //если змейка вышла в стенку - она умрет
-    if (x > width || x < 0 || y>height || y<0)
+    if (x > width - 1 || y > height - 1)
     {
         gameOver = true;
+        cout << "Змейка ударилась об стену!" << endl;
     }
 
     // Перемещение через стенки.
@@ -153,7 +154,7 @@ void logic()
         if (tailX[i] == x && tailY[i] == y)
         {
             gameOver = true;
-            cout << "Game Over!!!" << endl;
+            cout << "Змейка сьела себя!" << endl;
         }
     }
 
