@@ -5,12 +5,8 @@
 using namespace std;
 
 bool gameOver;
-const int width = 20;
-const int height = 20;
-int x, y, fruit_x, fruit_y, score;
-int tailX[100], tailY[100];
-int nTail;
-int eaten;
+const int width = 20, height = 20;
+int nTail, eaten, score, x, y, fruit_x, fruit_y, tailX[100], tailY[100];
 enum edirect { stop = 0, LEFT, RIGHT, up, down };
 edirect dir;
 
@@ -24,7 +20,6 @@ void setup()
     srand(time(0));
     fruit_x = rand() % (width - 2) + 2;
     fruit_y = rand() % (height - 2) + 2;
-
     score = 0;
 }
 
@@ -194,6 +189,5 @@ int main()
         input();
         logic();
     }
-
     return 0;
 }
