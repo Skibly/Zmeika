@@ -92,12 +92,22 @@ void input()
     case 's':
         dir = down;
         break;
-
-    case 'q':
+    case 72:
+        dir = up;
+        break;
+    case 80:
+        dir = down;
+        break;
+    case 77:
+        dir = RIGHT;
+        break;
+    case 75:
+        dir = LEFT;
+        break;
+    case 'q': // Выход из игры.
         gameOver = true;
         break;
     }
-
 }
 
 void logic()
