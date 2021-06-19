@@ -2,6 +2,7 @@
 #include <conio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <windows.h>
 using namespace std;
 
 bool gameOver;
@@ -34,7 +35,7 @@ void draw()
             //if (i == 1 || i == width || j == 1 || j == height)
             if (i == width || j == height)
             {
-                cout << "П";
+                cout << "#";
             }
             else if (i == y && j == x)
             {
@@ -177,7 +178,6 @@ void logic()
         cout << " +50 " << endl;
     }
 }
-
 int main()
 {
     setlocale(LC_ALL, "Russian");
